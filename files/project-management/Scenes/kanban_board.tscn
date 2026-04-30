@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dm7ij3r7d0yd6"]
+
+[ext_resource type="Script" uid="uid://dhoor8sml528n" path="res://Scenes/kanban_board.gd" id="1_ewq20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kg858"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewq20"]
+bg_color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+border_width_left = 10
+border_width_top = 35
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ewq20"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vxsg"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvt6l"]
+font_size = 24
+
+[node name="KanbanBoard" type="Control" unique_id=1383520049]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewq20")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1922842927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1414864160]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=1846428381]
+layout_mode = 2
+text = "Quest Progress"
+label_settings = SubResource("LabelSettings_kg858")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=925815815]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1123158694]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewq20")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/Panel" unique_id=840771999]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Not Started"
+label_settings = SubResource("LabelSettings_ewq20")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel" unique_id=1203151096]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 34.0
+offset_right = 307.0
+offset_bottom = 489.0
+
+[node name="NotStarted" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel/ScrollContainer" unique_id=1024006662]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel2" type="Panel" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=586852399]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewq20")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/Panel2" unique_id=1597414101]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "In Progress"
+label_settings = SubResource("LabelSettings_7vxsg")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel2" unique_id=830987784]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 34.0
+offset_right = 307.0
+offset_bottom = 490.0
+
+[node name="InProgress" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel2/ScrollContainer" unique_id=1816141783]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel3" type="Panel" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1289996380]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewq20")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer/Panel3" unique_id=962939460]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Completed"
+label_settings = SubResource("LabelSettings_bvt6l")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel3" unique_id=1304128420]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 34.0
+offset_right = 307.0
+offset_bottom = 489.0
+
+[node name="Completed" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/Panel3/ScrollContainer" unique_id=775374080]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

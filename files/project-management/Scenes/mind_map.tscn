@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dwdk1nveh8gt1"]
+
+[ext_resource type="Script" uid="uid://chj4kq4icm653" path="res://Scenes/mind_map.gd" id="1_x1yo1"]
+[ext_resource type="Script" uid="uid://2yq8dlfiuuht" path="res://Scenes/camera_2d.gd" id="4_381d6"]
+
+[node name="MindMap" type="Node2D" unique_id=1626631633]
+script = ExtResource("1_x1yo1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=681462000]
+position = Vector2(480, 288)
+script = ExtResource("4_381d6")

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bn46p475waji7"]
+
+[ext_resource type="Script" uid="uid://dslu52fkv07il" path="res://Scenes/quests_ui.gd" id="1_dir66"]
+[ext_resource type="PackedScene" uid="uid://c63i260ko12xp" path="res://Scenes/quest_creation.tscn" id="2_dygh0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dygh0"]
+font_size = 32
+font_color = Color(0.09, 0.09, 0.09, 1)
+
+[node name="QuestsUI" type="Control" unique_id=55763285]
+layout_mode = 3
+anchor_right = 0.82800007
+anchor_bottom = 1.0
+offset_right = 165.11993
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dir66")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1264326245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1513710240]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "Quests"
+label_settings = SubResource("LabelSettings_dygh0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect" unique_id=43349914]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 795.0
+offset_bottom = 340.0
+
+[node name="QuestList" type="VBoxContainer" parent="ColorRect/ScrollContainer" unique_id=990616229]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddQuest" type="Button" parent="ColorRect" unique_id=271980705]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -80.0
+offset_right = 45.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Add Quest"
+
+[node name="QuestCreation" parent="ColorRect" unique_id=1851532693 instance=ExtResource("2_dygh0")]
+
+[connection signal="pressed" from="ColorRect/AddQuest" to="." method="_on_add_quest_pressed"]
+[connection signal="close_requested" from="ColorRect/QuestCreation" to="." method="_on_quest_creation_close_requested"]

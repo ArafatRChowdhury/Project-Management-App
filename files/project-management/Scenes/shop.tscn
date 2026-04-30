@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://dh6n7t1ss31ll"]
+
+[ext_resource type="Texture2D" uid="uid://blicpjbkb8fir" path="res://Sprites/Sword.png" id="1_2shtd"]
+[ext_resource type="Script" uid="uid://banrqg43m1det" path="res://Scenes/shop.gd" id="1_io27d"]
+[ext_resource type="Texture2D" uid="uid://omtxntum7ina" path="res://Sprites/Bomb.png" id="2_io27d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdj0q"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2shtd"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ps1r"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6jq0"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymrm4"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8dlv"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdj0q"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2shtd"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_io27d"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyrku"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xp22"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow1eo"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="Shop" type="Control" unique_id=830767800]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_io27d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1630614322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=988721770]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=1044731206]
+layout_mode = 2
+text = "Shop"
+label_settings = SubResource("LabelSettings_fdj0q")
+horizontal_alignment = 1
+
+[node name="BuySword" type="Button" parent="ColorRect/VBoxContainer" unique_id=1073538857]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2shtd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3ps1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k6jq0")
+text = "Sword"
+icon = ExtResource("1_2shtd")
+alignment = 0
+
+[node name="BuyBomb" type="Button" parent="ColorRect/VBoxContainer" unique_id=1698112725]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_io27d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ymrm4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s8dlv")
+text = "Bomb"
+icon = ExtResource("2_io27d")
+alignment = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer" unique_id=347006423]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_fdj0q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/PanelContainer" unique_id=1587866357]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1352382690]
+layout_mode = 2
+size_flags_horizontal = 0
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer" unique_id=38882920]
+layout_mode = 2
+
+[node name="ItemLabel" type="Label" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1077023005]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Item: "
+label_settings = SubResource("LabelSettings_2shtd")
+
+[node name="EffectLabel" type="Label" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1868124593]
+layout_mode = 2
+text = "Effect:"
+label_settings = SubResource("LabelSettings_2shtd")
+
+[node name="PriceLabel" type="Label" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1181905798]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Price: "
+label_settings = SubResource("LabelSettings_2shtd")
+
+[node name="InventoryLabel" type="Label" parent="ColorRect/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1784040674]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Held:"
+label_settings = SubResource("LabelSettings_2shtd")
+
+[node name="ErrorLabel" type="Label" parent="ColorRect/VBoxContainer" unique_id=1332452263]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_io27d")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=216131397]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tyrku")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5xp22")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow1eo")
+text = "Buy Item"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/BuySword" to="." method="_on_buy_sword_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/BuyBomb" to="." method="_on_buy_bomb_pressed"]
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

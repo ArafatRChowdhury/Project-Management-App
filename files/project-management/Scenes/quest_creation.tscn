@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://c63i260ko12xp"]
+
+[ext_resource type="Script" uid="uid://casquf3ctj0dk" path="res://Scenes/quest_creation.gd" id="1_x4cui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhy63"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4cui"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ow2n"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="QuestCreation" type="Window" unique_id=1851532693]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(640, 384)
+script = ExtResource("1_x4cui")
+
+[node name="Control" type="Control" parent="." unique_id=1493111330]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 384.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=389958451]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect" unique_id=653719803]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuestNameLabel" type="Label" parent="Control/ColorRect/VBoxContainer" unique_id=1957969100]
+layout_mode = 2
+text = "Quest Name"
+label_settings = SubResource("LabelSettings_lhy63")
+
+[node name="QuestNameEdit" type="LineEdit" parent="Control/ColorRect/VBoxContainer" unique_id=219019875]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617454, 0.6174552, 0.61745447, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4cui")
+placeholder_text = "Quest Name"
+
+[node name="TasksLabel" type="Label" parent="Control/ColorRect/VBoxContainer" unique_id=1735438911]
+layout_mode = 2
+text = "Tasks"
+label_settings = SubResource("LabelSettings_lhy63")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/ColorRect/VBoxContainer" unique_id=347052826]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/VBoxContainer/ScrollContainer" unique_id=1756337689]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1205078684]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617454, 0.6174552, 0.61745447, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4cui")
+placeholder_text = "Task"
+
+[node name="LineEdit2" type="LineEdit" parent="Control/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1647438298]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617454, 0.6174552, 0.61745447, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4cui")
+placeholder_text = "Task"
+
+[node name="LineEdit3" type="LineEdit" parent="Control/ColorRect/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1769700080]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617454, 0.6174552, 0.61745447, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4cui")
+placeholder_text = "Task"
+
+[node name="AddTaskButton" type="Button" parent="Control/ColorRect/VBoxContainer" unique_id=1042041160]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "+ Task"
+
+[node name="RewardLabel" type="Label" parent="Control/ColorRect" unique_id=2118019687]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -246.0
+offset_bottom = 45.0
+grow_horizontal = 0
+text = "Reward: 0 Coins"
+label_settings = SubResource("LabelSettings_4ow2n")
+
+[node name="CreateQuestButton" type="Button" parent="Control/ColorRect" unique_id=450642630]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -183.0
+offset_top = 49.0
+offset_right = -73.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "Create Quest"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Control/ColorRect/VBoxContainer/AddTaskButton" to="." method="_on_add_task_button_pressed"]
+[connection signal="pressed" from="Control/ColorRect/CreateQuestButton" to="." method="_on_create_quest_button_pressed"]

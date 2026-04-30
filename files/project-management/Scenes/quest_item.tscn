@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c6rwrjx5jy21b"]
+
+[ext_resource type="Script" uid="uid://cketxv5w5qhhm" path="res://Scenes/quest_item.gd" id="1_oiw6n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpocg"]
+bg_color = Color(0.26793694, 0.6243848, 0.9237252, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oiw6n"]
+font_size = 32
+
+[node name="QuestItem" type="PanelContainer" unique_id=1365965413]
+anchors_preset = -1
+anchor_right = 0.82800007
+anchor_bottom = 0.5
+offset_right = 0.11993408
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpocg")
+script = ExtResource("1_oiw6n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1047886892]
+layout_mode = 2
+
+[node name="QuestName" type="Label" parent="VBoxContainer" unique_id=981646239]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Quest Name"
+label_settings = SubResource("LabelSettings_oiw6n")
+
+[node name="Coins" type="Label" parent="VBoxContainer" unique_id=1127974762]
+layout_mode = 2
+text = "Reward: 0 Coins"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1123212821]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tasklist" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1729494427]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=367799943]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=366704844]
+layout_mode = 2
+disabled = true
+text = "Complete Quest"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

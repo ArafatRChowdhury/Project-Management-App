@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b74ex7jculou5"]
+
+[ext_resource type="Texture2D" uid="uid://pn2o1w5l2hfl" path="res://Sprites/slimes.png" id="1_jokqx"]
+[ext_resource type="Script" uid="uid://cl8xf3famkfh7" path="res://Scenes/slime.gd" id="1_swwnm"]
+[ext_resource type="Script" uid="uid://btn3mw4v56trj" path="res://Scenes/texture_rect.gd" id="3_aiwxb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vblni"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4si1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gljc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e388w"]
+bg_color = Color(0, 0, 0, 0.5058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiwxb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paq7w"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.23137255, 0.7137255, 0.2509804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f4si1"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Slime" type="Button" unique_id=1547239161]
+offset_left = -48.0
+offset_top = -96.0
+offset_right = 52.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_vblni")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f4si1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5gljc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e388w")
+toggle_mode = true
+script = ExtResource("1_swwnm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=112634856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=116206023]
+layout_mode = 2
+expand_mode = 4
+script = ExtResource("3_aiwxb")
+atlas_texture = ExtResource("1_jokqx")
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=957447900]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_aiwxb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_paq7w")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=104027048]
+layout_mode = 2
+text = "10 hp"
+label_settings = SubResource("LabelSettings_f4si1")
+horizontal_alignment = 1

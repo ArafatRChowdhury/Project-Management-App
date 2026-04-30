@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://b53afig1vc8em"]
+
+[ext_resource type="Texture2D" uid="uid://blicpjbkb8fir" path="res://Sprites/Sword.png" id="1_7kn1h"]
+[ext_resource type="Script" uid="uid://yloraqhwwsd8" path="res://Scenes/battlefield.gd" id="1_wk0rq"]
+[ext_resource type="Texture2D" uid="uid://omtxntum7ina" path="res://Sprites/Bomb.png" id="2_0dedv"]
+[ext_resource type="PackedScene" uid="uid://b74ex7jculou5" path="res://Scenes/slime.tscn" id="3_0dedv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wk0rq"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vyfiw"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kn1h"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dedv"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk0rq"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr3kp"]
+bg_color = Color(0.15686275, 0.3882353, 0.5882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyfiw"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akdgq"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc4l0"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3su5"]
+bg_color = Color(0.15686275, 0.3882353, 0.5882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Battlefield" type="Control" unique_id=1835184727]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk0rq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1918006440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=151503484]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "Fight"
+label_settings = SubResource("LabelSettings_wk0rq")
+horizontal_alignment = 1
+
+[node name="SelectedWeapon" type="Label" parent="ColorRect" unique_id=2057855354]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = 45.0
+offset_right = 92.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "Selected Weapon: None"
+label_settings = SubResource("LabelSettings_vyfiw")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1983366991]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.90567
+offset_top = -91.0
+offset_right = 121.90567
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sword" type="Button" parent="ColorRect/HBoxContainer" unique_id=85310947]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7kn1h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0dedv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wk0rq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xr3kp")
+toggle_mode = true
+text = "0"
+icon = ExtResource("1_7kn1h")
+expand_icon = true
+
+[node name="Bomb" type="Button" parent="ColorRect/HBoxContainer" unique_id=1637116241]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vyfiw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_akdgq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fc4l0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y3su5")
+toggle_mode = true
+text = "0"
+icon = ExtResource("2_0dedv")
+expand_icon = true
+
+[node name="Slime" parent="." unique_id=743623206 instance=ExtResource("3_0dedv")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -48.0
+offset_right = -54.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slime2" parent="." unique_id=873360888 instance=ExtResource("3_0dedv")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -48.0
+offset_right = 50.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slime3" parent="." unique_id=1602125807 instance=ExtResource("3_0dedv")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -48.0
+offset_right = 156.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/Bomb" to="." method="_on_bomb_pressed"]
+[connection signal="pressed" from="Slime" to="." method="_on_slime_pressed"]
+[connection signal="pressed" from="Slime2" to="." method="_on_slime_2_pressed"]
+[connection signal="pressed" from="Slime3" to="." method="_on_slime_3_pressed"]

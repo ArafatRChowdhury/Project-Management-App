@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://blg8e8og61qup"]
+
+[ext_resource type="Script" uid="uid://bs3hmsw6qk7ey" path="res://Scenes/mind_map_shape.gd" id="1_0uumd"]
+[ext_resource type="Texture2D" uid="uid://he7tjpipso3l" path="res://Sprites/MindMapShapes.png" id="1_1d6fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uumd"]
+size = Vector2(96, 9)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uumd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_govui"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1rp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MindMapShape" type="CharacterBody2D" unique_id=986784427]
+script = ExtResource("1_0uumd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=611552616]
+texture = ExtResource("1_1d6fg")
+hframes = 2
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1895038520]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1697490068]
+position = Vector2(0, -43.5)
+shape = SubResource("RectangleShape2D_0uumd")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1763236934]
+offset_left = -48.0
+offset_top = -39.0
+offset_right = 48.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_0uumd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_govui")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_h1rp3")
+wrap_mode = 1
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

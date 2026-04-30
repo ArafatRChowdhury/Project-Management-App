@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dr1xqk1yc6fmd"]
+
+[ext_resource type="Script" uid="uid://drxxecq54agjf" path="res://Scenes/mind_map_ui.gd" id="1_wf4ul"]
+[ext_resource type="PackedScene" uid="uid://dwdk1nveh8gt1" path="res://Scenes/mind_map.tscn" id="1_wig8n"]
+[ext_resource type="Texture2D" uid="uid://he7tjpipso3l" path="res://Sprites/MindMapShapes.png" id="3_ilikr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kl6bq"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nutdk"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kviu"]
+bg_color = Color(0.26666668, 0.62352943, 0.9254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03jbl"]
+atlas = ExtResource("3_ilikr")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilikr"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="mind_map_ui" type="Control" unique_id=654450200]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wf4ul")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1655669421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1287613024]
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(960, 576)
+render_target_update_mode = 4
+
+[node name="MindMap" parent="SubViewportContainer/SubViewport" unique_id=1626631633 instance=ExtResource("1_wig8n")]
+
+[node name="AddShape" type="Button" parent="." unique_id=1633796582]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 470.0
+offset_right = 455.0
+offset_bottom = 576.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kl6bq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nutdk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4kviu")
+icon = SubResource("AtlasTexture_03jbl")
+icon_alignment = 1
+
+[node name="ConnectShapes" type="Button" parent="." unique_id=94146797]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = 459.0
+offset_top = 470.0
+offset_right = 555.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_kl6bq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nutdk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4kviu")
+text = "Connector
+Tool"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1687869537]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Connect Mode: False"
+label_settings = SubResource("LabelSettings_ilikr")
+
+[connection signal="pressed" from="AddShape" to="." method="_on_add_shape_pressed"]
+[connection signal="pressed" from="ConnectShapes" to="." method="_on_connect_shapes_pressed"]
